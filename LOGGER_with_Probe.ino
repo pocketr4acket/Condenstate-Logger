@@ -13,8 +13,8 @@ File myFile;
 DS3231  rtc(SDA, SCL);
 
 int pinCS = 10; // Pin 10 on Arduino Uno
-#define trigPin 2
-#define echoPin 3
+#define trigPin 3
+#define echoPin 2
 #define MAX_DISTANCE 400
 
 // NewPing setup of pins and maximum distance.
@@ -25,13 +25,13 @@ void setup() {
     
   Serial.begin(9600);
   pinMode(pinCS, OUTPUT);
-  pinMode(7, OUTPUT);
+  pinMode(5, OUTPUT);
   
   // SD Card Initialization
   if (SD.begin())
   {
     Serial.println("SD card is ready to use.");
-    digitalWrite(7, HIGH);
+    digitalWrite(5, HIGH);
   } else
   {
     Serial.println("SD card initialization failed");
